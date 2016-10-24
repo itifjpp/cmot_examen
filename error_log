@@ -1,0 +1,4 @@
+[10-Aug-2016 20:16:16 America/Chicago] PHP Parse error:  syntax error, unexpected ''</p>' (T_ENCAPSED_AND_WHITESPACE) in /home/bientics/public_html/cmot_examen/application/modules/config/controllers/Config.php on line 243
+[10-Aug-2016 20:16:22 America/Chicago] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/bientics/public_html/cmot_examen/application/modules/inicio/controllers/Inicio.php on line 109
+[10-Aug-2016 20:16:24 America/Chicago] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/bientics/public_html/cmot_examen/application/modules/inicio/controllers/Inicio.php on line 109
+[10-Aug-2016 20:16:26 America/Chicago] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/bientics/public_html/cmot_examen/application/modules/inicio/controllers/Inicio.php on line 109

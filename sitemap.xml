@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://cmot.org.mx/</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/login</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/login/registrarme</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/historia</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/medicos</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/delegadosycomisionados</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/certificacion</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/renovacion_de_vigencia_de_certificacion</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/certificacion_curricular</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/eventos</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/cursos</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/contacto</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/assets/doc/aviso_privacidad_cmot.pdf</loc>
+  <lastmod>2016-07-14T23:56:33+00:00</lastmod>
+</url>
+<url>
+  <loc>https://cmot.org.mx/assets/doc/politicas_privacidad_cmot.pdf</loc>
+  <lastmod>2016-07-14T23:58:05+00:00</lastmod>
+</url>
+<url>
+  <loc>https://cmot.org.mx/login/reset_pass</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/historia/historia_70s</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/historia/historia_80s</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/historia/historia_90s</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/historia/historia_2000</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/assets/doc/nuevos_anexos_pdf.pdf</loc>
+  <lastmod>2016-07-14T23:58:08+00:00</lastmod>
+</url>
+<url>
+  <loc>https://cmot.org.mx/assets/doc/nuevos_anexos_word.docx</loc>
+  <lastmod>2016-07-14T23:57:53+00:00</lastmod>
+</url>
+<url>
+  <loc>https://cmot.org.mx/evento/1</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/evento/2</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/evento/3</loc>
+</url>
+<url>
+  <loc>https://cmot.org.mx/curso/1</loc>
+</url>
+</urlset>

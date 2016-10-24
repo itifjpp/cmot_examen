@@ -1,0 +1,46 @@
+http://www.tv-porinternet.com/
+
+campusparty
+Moises011086
+
+https://vps-1100759-x.dattaweb.com:2083/logout/?locale=en
+
+https://vps-1100759-x.dattaweb.com:2083/login?user=campusparty&pass=Moises011086 
+
+root
+o2ioy5jq5VGH
+https://vps-1100759-x.dattaweb.com:2083/logout/?locale=en
+https://vps-1100759-x.dattaweb.com:2087/
+
+servidor: ftp.pasaportetequilero.mx
+user: pasaport
+pass: 646jJaWz5n
+
+payu Latan Login
+user: pasaportetequilero1@gmail.com
+pass: cofradeTequila1$
+
+https://vivepueblosmagicos.mx:2083/login?user=admin&pass=moises011086
+https://gator3201.hostgator.com:2083/login?user=bientics&pass=tesoros011086
+
+bientics
+tesoros011086  
+ 
+user: bientics@vivepueblosmagicos.mx
+pass:bientics1
+servidor: ftp.vivepueblosmagicos.mx
+
+https://vps-1100759-x.dattaweb.com:2083/logout/?locale=en
+https://vps-1100759-x.dattaweb.com:2087
+https://vps-1100759-x.dattaweb.com:2083/cpsess3303310809/3rdparty/phpMyAdmin/index.php
+
+
+USUARIO:  root /pueblosmagicos
+CONTRASEÑA:  bienTICS011086
+
+<!---------------------Vive pueblos Magicos Guanajuato---------------------------->
+bd=pueblosm_vpmguanajuato
+user=pueblosm_vpmg
+pass=vpmguanajuato
+bienTICS
+
