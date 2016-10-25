@@ -2,7 +2,7 @@ $(document).ready(function (){
     $('body .page-loading').addClass('hide');
     $('body .page-load').removeClass('hide');
     $('body #example_length ,.DTTT ').addClass('hidden');  
-    $('#retrievingfilename').html5imageupload({
+    $('body .html5imageupload').html5imageupload({
         onAfterProcessImage: function() {
                 $('#filename').val($(this.element).data('name'));
                 $('#check-img').val('Nueva');

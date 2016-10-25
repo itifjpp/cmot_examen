@@ -1,6 +1,22 @@
 $(document).ready(function(){
-$('.registro-casoclinico').submit(function(e){
-    var form=new FormData($(this)[0]);
+    $('body .btn-size-img').click(function (e){
+        //size_img();
+        
+    })
+    
+    function size_img(){
+        var height=$('input[name=height_img]').val();
+        var width=$('input[name=width_img]').val();
+        $('body .html5imageupload').attr('data-width',width).attr('data-height',height);
+        $('.html5imageupload').css({
+            'height':height+'px',
+            'width':width+'px'
+        })
+        $('.registro-imagenes-cc').removeClass('hide')
+        
+    }
+    $('.registro-casoclinico').submit(function(e){
+        var form=new FormData($(this)[0]);
         e.preventDefault();
         $.ajax({
             url: base_url+"admin/insert_casoclinico",
@@ -24,22 +40,26 @@ $('.registro-casoclinico').submit(function(e){
     })
     $('.registro-imagenes-cc').submit(function(e){
         e.preventDefault();
-        $.ajax({
-            url: base_url+"admin/inser_img_cc",
-            type: 'POST',
-            dataType: 'json',
-            data: $(this).serialize(),
-            beforeSend: function (xhr) {
-                msj_success_noti('Guardando registro...');
-            },success: function (data, textStatus, jqXHR) {
-                if(data.accion=='1'){
-                    msj_success_noti('Registro Guardado');
-                    location.reload();
+        if($('input[name=casoclinico_img]').val()!=''){
+            $.ajax({
+                url: base_url+"admin/inser_img_cc",
+                type: 'POST',
+                dataType: 'json',
+                data: $(this).serialize(),
+                beforeSend: function (xhr) {
+                    msj_success_noti('Guardando registro...');
+                },success: function (data, textStatus, jqXHR) {
+                    if(data.accion=='1'){
+                        msj_success_noti('Registro Guardado');
+                        location.reload();
+                    }
+                },error:function(){
+                    msj_error_serve()
                 }
-            },error:function(){
-                msj_error_serve()
-            }
-        })  
+            })  
+        }else{
+            msj_error_noti('Seleccionar Imagen')
+        }
     })
     $('body .del-casoclinico-img').on('click',function(e){
         var id=$(this).attr('data-id');
