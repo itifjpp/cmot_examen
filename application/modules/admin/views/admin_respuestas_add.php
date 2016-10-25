@@ -39,8 +39,8 @@
                                         <span class="help"></span>
                                         <div class="controls">
                                             <select class="select2 width100 "  id="respuesta_valor" data-value="<?=$info[0]['respuesta_valor']?>" style="width: 100%" name="respuesta_valor" >
-                                                <option value="1">Correcto</option>
                                                 <option value="0">Incorrecto</option>
+                                                <option value="1">Correcto</option>
                                             </select>
                                         </div>
                                     </div>

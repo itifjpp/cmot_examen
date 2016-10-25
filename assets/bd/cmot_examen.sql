@@ -1,7 +1,7 @@
 -- --------------------------------------------------------
--- Host:                         localhost
--- Versión del servidor:         6.0.0-alpha-community-nt-debug - MySQL Community Server (GPL)
--- SO del servidor:              Win32
+-- Host:                         169.57.6.70
+-- Versión del servidor:         5.5.52-cll - MySQL Community Server (GPL)
+-- SO del servidor:              Linux
 -- HeidiSQL Versión:             8.3.0.4694
 -- --------------------------------------------------------
 
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `casosclinicos` (
   `casoclinico_fecha` text,
   `casoclinico_hora` text,
   PRIMARY KEY (`casoclinico_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- Volcando datos para la tabla bientics_cmot_examen.casosclinicos: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `casosclinicos` DISABLE KEYS */;
@@ -57,10 +57,15 @@ CREATE TABLE IF NOT EXISTS `casos_clinicos_img` (
   `casoclinico_img` text,
   `casoclinico_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`casoclinico_img_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 -- Volcando datos para la tabla bientics_cmot_examen.casos_clinicos_img: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `casos_clinicos_img` DISABLE KEYS */;
+INSERT INTO `casos_clinicos_img` (`casoclinico_img_id`, `casoclinico_img`, `casoclinico_id`) VALUES
+	(1, 'city.ea21aa.jpg', 1),
+	(2, 'caso clinico 1.8514fb.png', 3),
+	(11, 'maxresdefault.ebff21.jpg', 4),
+	(12, 'Cap2.805630.png', 4);
 /*!40000 ALTER TABLE `casos_clinicos_img` ENABLE KEYS */;
 
 
@@ -75,66 +80,35 @@ CREATE TABLE IF NOT EXISTS `cmot_sessions` (
   PRIMARY KEY (`id`),
   KEY `ci_sessions_timestamp` (`timestamp`),
   KEY `session_id` (`session_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=121 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla bientics_cmot_examen.cmot_sessions: ~55 rows (aproximadamente)
+-- Volcando datos para la tabla bientics_cmot_examen.cmot_sessions: ~24 rows (aproximadamente)
 /*!40000 ALTER TABLE `cmot_sessions` DISABLE KEYS */;
 INSERT INTO `cmot_sessions` (`session_id`, `id`, `ip_address`, `timestamp`, `data`) VALUES
-	(73, '03b28fad65eeb7cfd28fb96ad1aeae85967b678f', '::1', 1477369934, '__ci_last_regenerate|i:1477369934;CMOT_USER|s:1:"1";'),
-	(69, '05dafeccc01249f880581aea8c1044e5d5230225', '::1', 1477368851, '__ci_last_regenerate|i:1477368574;CMOT_USER|s:1:"1";'),
-	(75, '073123e4bc768a9e6fe796b4262925289153ad9a', '::1', 1477369935, '__ci_last_regenerate|i:1477369935;CMOT_USER|s:1:"1";'),
-	(63, '0ad1ea88196a0510b7cff40817781a03a41b33a1', '::1', 1477364840, '__ci_last_regenerate|i:1477364840;'),
-	(83, '0f8022a86ffcbc8465fefecf45a11d82db138ffb', '::1', 1477372860, '__ci_last_regenerate|i:1477372670;CMOT_USER|s:1:"4";'),
-	(37, '12b238a48cc992342bc3bdaff6f5b54d1c822234', '::1', 1477356540, '__ci_last_regenerate|i:1477356286;'),
-	(41, '1338bdcdc125aa18990e3bee744613a332e64b1f', '::1', 1477356648, '__ci_last_regenerate|i:1477356648;'),
-	(53, '13fe529014f58d5d37176d94ce72c8b06da82c60', '::1', 1477359702, '__ci_last_regenerate|i:1477359417;CMOT_USER|s:1:"4";'),
-	(78, '143388b3db9d2ccd7e8f72675f421373230fbb03', '::1', 1477370946, '__ci_last_regenerate|i:1477370728;CMOT_USER|s:1:"1";'),
-	(65, '1997d7dd12ee9c87dac67e4c4ab10341d0476fd5', '::1', 1477366477, '__ci_last_regenerate|i:1477366447;'),
-	(34, '1bea5f2efa2fd28159cc7d6e921b05c4451dca3b', '::1', 1477355951, '__ci_last_regenerate|i:1477355838;'),
-	(81, '1eb178a155f5991c48e0e3444affb39ecfb8cd95', '::1', 1477372479, '__ci_last_regenerate|i:1477372271;CMOT_USER|s:1:"1";'),
-	(70, '378448158d09b7a1f890e61364e4fc0f7cf36bdc', '::1', 1477369207, '__ci_last_regenerate|i:1477368965;CMOT_USER|s:1:"1";'),
-	(80, '38fd710ceb1626c7402b6de32b9f1e44335d7a97', '::1', 1477371426, '__ci_last_regenerate|i:1477371371;CMOT_USER|s:1:"1";'),
-	(64, '39a08747cd65ce90651bcd35fcb8dd52f8aec3fc', '::1', 1477367451, '__ci_last_regenerate|i:1477366411;CMOT_USER|s:1:"1";'),
-	(49, '3e9a3f0e9bdab6b90f1a4f20be084b8e9b7c941e', '::1', 1477359031, '__ci_last_regenerate|i:1477358739;CMOT_USER|s:1:"1";'),
-	(62, '4065201acc1e04651d6f17f8ec40c969ea0f48ea', '::1', 1477361778, '__ci_last_regenerate|i:1477361549;CMOT_USER|s:1:"4";'),
-	(85, '42e207d4c385f23c85b2ad960c3da0b78a54491e', '::1', 1477373270, '__ci_last_regenerate|i:1477373270;'),
-	(42, '4bde0e7dbf931b32b7e6ecd48c3efdf655635a55', '189.211.211.120', 1477356885, '__ci_last_regenerate|i:1477356791;'),
-	(48, '4c24b1a03664e729eed8c37a472fc9a8410ef4e7', '::1', 1477358333, '__ci_last_regenerate|i:1477358151;'),
-	(76, '5284ef8bc8606a5cbc6160e372da22d0e0c6c1e1', '::1', 1477370205, '__ci_last_regenerate|i:1477369935;CMOT_USER|s:1:"1";'),
-	(61, '54360eef4e12428a867a97c781d434185a50b6c5', '::1', 1477361521, '__ci_last_regenerate|i:1477361444;'),
-	(59, '597684f8275905fb43466838140875a3ed15ab67', '::1', 1477361080, '__ci_last_regenerate|i:1477360815;'),
-	(77, '6504c34278e209fabbdd5cfe003248ebb75b75e6', '::1', 1477370584, '__ci_last_regenerate|i:1477370304;CMOT_USER|s:1:"1";'),
-	(82, '68ef535bad440c3ef61a959044c7eb5f8658adf5', '::1', 1477372654, '__ci_last_regenerate|i:1477372360;CMOT_USER|s:1:"4";'),
-	(68, '6c595e2d7a9ad692c7179cc768a898a0c19fc939', '::1', 1477368374, '__ci_last_regenerate|i:1477368166;CMOT_USER|s:1:"1";'),
-	(71, '6d49b638db31cc211a3384e6fd71fbc97c3e59cd', '::1', 1477369537, '__ci_last_regenerate|i:1477369284;CMOT_USER|s:1:"1";'),
-	(29, '7859cbbede97ded766a0e44bf8c0b0bce0c7443c', '189.211.211.120', 1477355059, '__ci_last_regenerate|i:1477355059;'),
-	(47, '8ae93b12c0df9803ec5dd29f014fe185cea5f348', '::1', 1477358073, '__ci_last_regenerate|i:1477357787;'),
-	(54, '8b0e8ed529ab14df2e094d80fcc03e536d4eef6c', '::1', 1477359806, '__ci_last_regenerate|i:1477359806;'),
-	(40, '8e5ee0ea533637507efb93bf1bc763f645d3a970', '189.211.211.120', 1477356932, '__ci_last_regenerate|i:1477356639;'),
-	(79, '8f7c7c79af438e1b150e1d2b75e889d6bf065fa1', '::1', 1477371347, '__ci_last_regenerate|i:1477371052;CMOT_USER|s:1:"1";'),
-	(67, '900796da01be7e8164f5f8f8f4ca1a597ffd7de1', '::1', 1477368166, '__ci_last_regenerate|i:1477368165;CMOT_USER|s:1:"1";'),
-	(35, '948b31fa01b1a6ec48548ddaecad396045888b01', '189.211.211.120', 1477356214, '__ci_last_regenerate|i:1477355917;'),
-	(60, '9814eec9ec4b2a43dbe4c827b17e74e4b66bf2b8', '::1', 1477361389, '__ci_last_regenerate|i:1477361121;'),
-	(72, '9923610420c5217e2fd25ff1c1ddebf34b8ad999', '::1', 1477369915, '__ci_last_regenerate|i:1477369616;CMOT_USER|s:1:"1";'),
-	(31, 'b68ccaf0cfcecf15295686049349011f532a6023', '189.211.211.120', 1477355283, '__ci_last_regenerate|i:1477355250;'),
-	(56, 'ba60a9b681ee4f54f00c147ed6cf1a97944580a7', '::1', 1477360545, '__ci_last_regenerate|i:1477360362;CMOT_USER|s:1:"4";'),
-	(38, 'bfc316008c3efc380471330bfecf5deae36c262d', '189.211.211.120', 1477356566, '__ci_last_regenerate|i:1477356524;'),
-	(44, 'd1fae9b253d0f7816591c909802cab00be87edc2', '189.211.211.120', 1477357100, '__ci_last_regenerate|i:1477356963;'),
-	(55, 'd52876fbd7d8d106e7e6fc92da73f71ec54dd8c6', '::1', 1477360094, '__ci_last_regenerate|i:1477359878;CMOT_USER|s:1:"4";'),
-	(57, 'd874a5f3e18b5d4514e58550313e2e9da0264d28', '187.171.96.125', 1477360689, '__ci_last_regenerate|i:1477360679;'),
-	(36, 'db90024cbcb6b2e2f01d3886b944909abb49f381', '189.211.211.120', 1477356522, '__ci_last_regenerate|i:1477356223;'),
-	(33, 'dd82cb8cb23fb4d925f7356f046265b9d510f871', '189.211.211.120', 1477355917, '__ci_last_regenerate|i:1477355609;'),
-	(32, 'df49aef59153ec9fb5b93a71f67f6dfc1258d9af', '189.211.211.120', 1477355600, '__ci_last_regenerate|i:1477355307;'),
-	(46, 'e7e1cca9343c343c2cce9f2d78d0228e95a6d52d', '::1', 1477357345, '__ci_last_regenerate|i:1477357314;'),
-	(58, 'ec1f8077b5a3a10dfbdc7e848a291ec11549790a', '::1', 1477360791, '__ci_last_regenerate|i:1477360785;CMOT_USER|s:1:"4";'),
-	(27, 'ec69aa635463fae5c8d96ec0388acbda12c6af08', '189.211.211.120', 1477354885, '__ci_last_regenerate|i:1477354574;'),
-	(66, 'f4383b0d545ef5144227ce6e58606d2a97f8ffe9', '::1', 1477368164, '__ci_last_regenerate|i:1477367452;CMOT_USER|s:1:"1";'),
-	(74, 'f6c6faa0322f6455d2d7ee8d86552f209aac9d7b', '::1', 1477369935, '__ci_last_regenerate|i:1477369934;CMOT_USER|s:1:"1";'),
-	(28, 'f78fa66f72b1fbf1508d03c7a75002305e0720b5', '189.211.211.120', 1477354954, '__ci_last_regenerate|i:1477354886;'),
-	(45, 'f867de8e9ca904dc969751532b017938e97d82d1', '::1', 1477357228, '__ci_last_regenerate|i:1477356994;'),
-	(26, 'fd88f33336a0c500231f3a280ab36339f4ccf212', '189.211.211.120', 1477354572, '__ci_last_regenerate|i:1477354273;'),
-	(52, 'fdedd04d35a8cbe331d9a6105c32805c3324c4aa', '::1', 1477359144, '__ci_last_regenerate|i:1477359113;'),
-	(51, 'ff86b22f84a607fd2a4bba259fd3062e6f43de9c', '::1', 1477359285, '__ci_last_regenerate|i:1477359107;CMOT_USER|s:1:"4";');
+	(107, '039bc30fafd0253c428f0a0203768072f121f919', '::1', 1477421227, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421136;'),
+	(116, '093d39717a704c3098ecca2f32063803122f39fd', '::1', 1477421877, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421876;'),
+	(99, '2262b260fb26b89362d8221a8c055e8233ed91e0', '66.102.6.117', 1477418179, '__ci_last_regenerate|i:1477418179;'),
+	(118, '2ee57ba00d9ba963d456dd29aa5492bc7112d5a8', '::1', 1477422370, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421932;'),
+	(101, '33d1b6a772170992988489d0d80d8ae8c0a724af', '::1', 1477421004, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421004;'),
+	(104, '42a048000ba1c4bc07c743ff044ed5f5f799b89b', '::1', 1477421047, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421046;'),
+	(113, '490e148250c41a8f716519c39046d59d50c60a39', '::1', 1477421839, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421802;'),
+	(106, '4c4d0c9971ab925d0663d7064077a85e86d0422d', '::1', 1477421083, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421083;'),
+	(110, '5a1e3f4d0367fb27d88b7009eccc65db2c9fba6b', '::1', 1477421908, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421207;'),
+	(108, '62ee9f7888eb8b639eee3ab8f885a5e38a407fc6', '::1', 1477421142, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421141;'),
+	(111, '729500d4bf0d9fcfeeef4088eb5d479c474db9b3', '::1', 1477421654, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421653;'),
+	(115, '743b766a1f55597c769cf6b46be8912007c64bd1', '::1', 1477421855, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421855;'),
+	(102, '7782d8991f506e67f81513c22f447ad8252543fd', '::1', 1477421017, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421016;'),
+	(109, '77fc63f770b148356b843d28f6e9538549233527', '::1', 1477421197, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421196;'),
+	(120, '8a89fbd8bc3e0011aa566f4da83ef086888e9516', '::1', 1477422371, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477422371;'),
+	(112, '955c74102b3bfe3e8036311ac3b6d6bbca56ec16', '::1', 1477421669, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421668;'),
+	(103, '9fae077970fbdea518e5c81ef000494bf0ad60f7', '::1', 1477421037, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421037;'),
+	(105, 'a088208afb426f5709b26d7228918d4109574f7c', '::1', 1477421076, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421075;'),
+	(98, 'a58d3177c55f7c7247637bc62dabdd1e8132d334', '::1', 1477413221, '__ci_last_regenerate|i:1477413200;'),
+	(117, 'adc5368d15610461f1d8f72cb18f8098a6f97ccd', '::1', 1477421910, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421909;'),
+	(100, 'c3dd58d60bdba20acac8ca3a8b3d2d6e95e1149f', '::1', 1477421190, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477420684;'),
+	(119, 'e84510d17d30309bcaa5671d31b068c63095b9bf', '::1', 1477422365, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477422364;'),
+	(114, 'fc0bbb326851db084999558ac652f4b960904855', '::1', 1477421808, 'CMOT_USER|s:1:"1";__ci_last_regenerate|i:1477421807;'),
+	(95, 'fd3fa86d18aa66bbfdfb20573215e1278dbf6b9c', '::1', 1477412514, '__ci_last_regenerate|i:1477412496;CMOT_USER|s:1:"1";');
 /*!40000 ALTER TABLE `cmot_sessions` ENABLE KEYS */;
 
 
@@ -145,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `preguntas` (
   `pregunta_nombre` text NOT NULL,
   `casoclinico_id` text NOT NULL,
   PRIMARY KEY (`pregunta_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 -- Volcando datos para la tabla bientics_cmot_examen.preguntas: ~12 rows (aproximadamente)
 /*!40000 ALTER TABLE `preguntas` DISABLE KEYS */;
@@ -173,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `respuestas` (
   `respuesta_valor` text,
   `pregunta_id` text,
   PRIMARY KEY (`respuesta_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
 
 -- Volcando datos para la tabla bientics_cmot_examen.respuestas: ~59 rows (aproximadamente)
 /*!40000 ALTER TABLE `respuestas` DISABLE KEYS */;
@@ -251,7 +225,7 @@ CREATE TABLE IF NOT EXISTS `resultado_evaluacion` (
   `usuario_id` text,
   `casoclinico_id` text,
   PRIMARY KEY (`resultado_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 -- Volcando datos para la tabla bientics_cmot_examen.resultado_evaluacion: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `resultado_evaluacion` DISABLE KEYS */;
@@ -270,12 +244,29 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `usuario_pass` text,
   `usuario_rol` text,
   PRIMARY KEY (`usuario_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla bientics_cmot_examen.usuarios: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla bientics_cmot_examen.usuarios: ~18 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 INSERT INTO `usuarios` (`usuario_id`, `usuario_nombre`, `usuario_apellidos`, `usuario_rfc`, `usuario_registro`, `usuario_user`, `usuario_pass`, `usuario_rol`) VALUES
-	(1, 'ADMINISTRADOR', 'N/E', 'N/E', 'N/E', 'admin_cmot', '5cc0ce61cc2c2c662c8e516cd0e23b3c', 'Administrador');
+	(1, 'ADMINISTRADOR', 'N/E', 'N/E', 'N/E', 'admin_cmot', '5cc0ce61cc2c2c662c8e516cd0e23b3c', 'Administrador'),
+	(6, 'DR GONZALO JESÚS', 'RODRÍGUEZ FLORES', 'ROFG7505314U6', 'CE013297NL04', 'ROFG7505314U6', 'f5142ec9f852c7578aad2ac95ad36986', 'Medico'),
+	(7, 'FRANCISCO JAVIER', 'MAGDALENO RAMÍREZ', 'MARF560626 JK9', 'TAB- 1371E', 'MARF560626 JK9', '8a3e037cfd9c7a63e7dc778473611dd0', 'Medico'),
+	(8, 'JORGE ALBERTO', 'AYALA SOLIS', 'AASJ801230 NB1', 'CE020562SON11', 'AASJ801230 NB1', '2c33691e5d2979330d38838a3456e687', 'Medico'),
+	(9, 'MONICA', 'MARTINEZ SANCHEZ', 'MASM730302 4U1', '14/0059/11', 'MASM730302 4U1', '48302d1a69964c3979e1c92ed6aadad9', 'Medico'),
+	(10, 'DIANA', 'TELLEZ VIQUEZ', 'TEVD690618 GZ5', 'RE020010MEX', 'TEVD690618 GZ5', '6629ece5527b95c140d49c93dd694b9e', 'Medico'),
+	(11, 'RODOLFO', 'COLMENARES PEREZ', 'COPR790405 JQ8', 'CE020315OAX11', 'COPR790405 JQ8', '26f32166a7af81dca3aa7abd022228a8', 'Medico'),
+	(12, 'ALEJO', 'URBIETA MAGAÑA', 'UIMA560118 5WA', 'EME- 1504E', 'UIMA560118 5WA', '11671d42bbecb3bd839bd8701ab8ecae', 'Medico'),
+	(13, 'ALFREDO', 'RODRIGUEZ PEREZ', 'ROPA630112 1W5', 'CEOO9772GTO', 'ROPA630112 1W5', 'b1984eb6a39e76f9571d392bda1abe85', 'Medico'),
+	(14, 'ALBERTO', 'MARRON MC NAUGHT', 'MAMA780807', 'CE016613PUE07', 'MAMA780807', '10372157698199058ca030659f21655f', 'Medico'),
+	(15, 'RAFAEL', 'CASTRO RAMIREZ', 'CARR830309', '14/0193/12', 'CARR830309', 'fc9836fd05b37bb542dec443f5ea1115', 'Medico'),
+	(16, 'MILTON ALFONSO', 'LUNA BOZA DIAZ', 'LUDM560626 JC2', 'TAB- 1503E', 'LUDM560626 JC2', '02dbdb6db6e72d26c71687ae826b3539', 'Medico'),
+	(17, 'ALVARO JAVIER', 'REDONDO', 'REAL670504 ED2', 'RE006511MICH', 'REAL670504 ED2', 'e8422621e4d5fb971e2ca009fb540594', 'Medico'),
+	(18, 'VICTOR MANUEL', 'BARAJAS ORTIZ', 'BAOV 690817 IG4', 'CE0008299DF', 'BAOV 690817 IG4', '409689b5350e261ae691a094354956ce', 'Medico'),
+	(19, 'MARAHEM', 'CORTEZ GOMEZ', 'COGM800925 U42', 'CE020487DF11', 'COGM800925 U42', 'aba27a5f179f4fa94cfafd9df66273f6', 'Medico'),
+	(20, 'JUAN CARLOS', 'NAVARRO ACEVEDO', 'NAAJ790316176', 'CE018515DF09', 'NAAJ790316176', '1ed3161f132f171643a62f49f213ae4d', 'Medico'),
+	(21, 'ROLANDO IVAN', 'MORALES GONZALEZ', 'MOGR680808D59', 'CE0019299JAL', 'MOGR680808D59', '178c5bc30f9b1ec38707477e5e855fdc', 'Medico'),
+	(22, 'ALEJANDRO', 'ORDONEZ', 'OOSA771026 8V6', 'CE017710SON08', 'OOSA771026 8V6', '43e940cc820587e519d31d3fcf3a20cd', 'Medico');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
