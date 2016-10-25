@@ -48,16 +48,21 @@ class Inicio extends Config{
         $this->load->view('inicio_examen',$sql);
     }
     public function examen() {
-        $sql['info']= $this->config_mdl->_get_data_condition('usuarios',array(
-            'usuario_id'=>$_SESSION['CMOT_USER']
-        ));
-        $sql['examen']=  $this->get_examen();
-        $sql['casosclinicos']=  $this->config_mdl->_get_data('casosclinicos');
-        $sql['check_user']=  $this->config_mdl->_get_data_condition('resultado_evaluacion',array(
-            'usuario_id'=>  $_SESSION['CMOT_USER']
-        ));
-        $sql['resultados']=  $this->admin_mdl->_resultados($_SESSION['CMOT_USER']);
-        $this->load->view('inicio_examen',$sql);
+        if($_SESSION['CMOT_USER']){
+            $sql['info']= $this->config_mdl->_get_data_condition('usuarios',array(
+                'usuario_id'=>$_SESSION['CMOT_USER']
+            ));
+            $sql['examen']=  $this->get_examen();
+            $sql['casosclinicos']=  $this->config_mdl->_get_data('casosclinicos');
+            $sql['check_user']=  $this->config_mdl->_get_data_condition('resultado_evaluacion',array(
+                'usuario_id'=>  $_SESSION['CMOT_USER']
+            ));
+            $sql['resultados']=  $this->admin_mdl->_resultados($_SESSION['CMOT_USER']);
+            $this->load->view('inicio_examen',$sql);
+        }else{
+            echo '<center><h3>Consejo Mexicano de  Ortopedia y Traumatología A.C.</h3></center>';
+            echo '<center><h2>¡ACCESO DENEGADO!</h2></center>';
+        }
     }
     
     public function get_examen() {
