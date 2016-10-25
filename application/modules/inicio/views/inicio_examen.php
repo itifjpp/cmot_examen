@@ -163,7 +163,7 @@
   $(document).ready(function(e){
         
         $(document).bind("contextmenu",function(e){
-            return false;
+            return false; 
         });
         $('body .zoom_img_pregunta').elevateZoom({
             constrainType:"height", 
