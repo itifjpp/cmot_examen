@@ -140,6 +140,12 @@
                                 <span class="selected"></span> 
                             </a> 
                         </li>
+                        <li class="start active "> 
+                            <a href="<?=  base_url()?>admin/usuarios"> 
+                                <i class="fa fa-users"></i> 
+                                <span class="title">Usuarios</span> 
+                            </a> 
+                        </li>
                         <li class=""> <a href="javascript:;"> 
                                 <i class="fa fa-pencil-square-o fa-2x color-white"></i> 
                                 <span class="title color-white">Examen</span> <span class="arrow "></span> </a>

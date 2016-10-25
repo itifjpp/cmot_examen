@@ -9,7 +9,7 @@ $(document).ready(function (){
         var form=$(this);
         e.preventDefault();
         $.ajax({
-            url: "https://cmot.org.mx/api/acceder",
+            url: base_url+"login/acceder",
             type: 'POST',
             dataType: 'json',
             data:$('.form-login').serialize(),
@@ -23,19 +23,13 @@ $(document).ready(function (){
                 form.find('button').attr('disabled',false);
                 form.find('.fa-spinner').addClass('hidden');
                 if(data.accion==1){
-                    if(data.rol_id_not==2 || data.rol_id_not==3 || data.rol_id_not==4){
-                        location.href=base_url+'inicio/examen?u='+data.usuario_id+'&r='+data.rol_id;
+                    if(data.rol_id=='Medico'){
+                        location.href=base_url+'inicio/examen';
                     }else{
-                        location.href=base_url+'admin?user=?u='+data.usuario_id+'&r='+data.rol_id;
+                        location.href=base_url+'admin';
                     }
                 }if(data.accion==2){
                     msj_error_noti('Usuario y/o contraseña incorrectos')
-                }
-                if(data.accion==3){
-                    msj('Cuenta Bloqueada','La cuenta de usuario a la que esta intentando acceder se encuentra temporalmete bloqueada. Para más información favor de ponerse en contacto con el administrador.')
-                }
-                if(data.accion==4){
-                    msj('Cuenta Desactivada','La cuenta de usuario a la que esta intentando acceder se encuentra desactivada. Para más información favor de ponerse en contacto con el administrador.')
                 }
             },error: function (xhr) {
                 console.log(xhr)

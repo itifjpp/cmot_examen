@@ -13,67 +13,45 @@
     <div class="content page-load hide"> 
         <ul class="breadcrumb">
             <li><p>Inicio</p></li>
-            <li><a href="#">Configuración</a></li>
-            <li><a href="#" class="active">Gestión de cuentas de usuarios</a> </li>
+            <li><a href="#" class="active">Usuarios</a> </li>
         </ul>
         <div class="row-fluid">
-            <div class="span12 table-data">
+            <div class="span12">
                 <div class="grid simple ">
                     <div class="grid-title">
-                        <h4>Gestión de cuentas de usuarios</h4>
+                        <h4>Usuarios </h4>
+                        <a href="<?=  base_url()?>admin/usuarios/add?a=add&u=0">
+                            <button class="btn btn-cons pull-right back-imss">Agregar</button>
+                        </a>
                     </div>
                     <div class="grid-body ">
-                        <table class="table table-hover table-condensed " id="example">
+                        <table class="table table-hover table-condensed" id="example">
                             <thead>
                                 <tr>
-                                    <th style="width: auto">Usuario</th>
-                                    <th style="width: auto">Médico</th>
-                                    <th style="width: auto">Registro</th>
-                                    <th style="width: auto" >Ciudad</th>
-                                    <th style="width: auto" >Acceso</th>
-                                    <th style="width: auto" >Status</th>
-                                    <th style="width: 15%">Acciones</th>
+                                    <th style="width:auto">Usuario</th>
+                                    <th style="width:auto">Nombre</th>
+                                    <th style="width:auto" >Apellidos</th>
+                                    <th style="width:auto" >RFC</th>
+                                    <th style="width:auto" >Registro</th>
+                                    <th style="width:auto" >Rol</th>
+                                    <th style="width: auto;" class="text-center">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach ($Gestion as $g):?>
-                                
-                                <tr id="<?=$g['medico_id']?>" >
+                                <tr id="<?=$g['usuario_id']?>">
                                     <td class="v-align-middle"><?=$g['usuario_user']?> </td>
-                                    <td class="v-align-middle"><?=$g['medico_nombre']?> <?=$g['medico_apellidos']?></td>
-                                    <td class="v-align-middle"><?=$g['medico_registro']?></td>
-                                    <td class="v-align-middle"><?=$g['medico_ciudad']?></td>
-                                    <td class="v-align-middle">
-                                        <?php if($g['usuario_status']==''){?>
-                                        <span class="label label-success">Activo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                        <?php }else{?>
-                                        <span class="label label-danger">Bloqueado</span>
-                                        <?php }?>
-                                        
-                                    </td>
-                                    <td class="v-align-middle">
-                                        <?php if($g['usuario_status_eliminado']==''){?>
-                                        <span class="label label-success">Activo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                        <?php }else{?>
-                                        <span class="label label-danger">Eliminado</span>
-                                        <?php }?>
-                                        
-                                    </td>
-                                    <td class="v-align-middle">
-                                        <?php if($g['usuario_status']==''){?>
-                                        <i class="fa fa-user-times icono-acciones tip status_usuario pointer" data-accion='Bloqueado' data-id='<?=$g['usuario_id']?>' data-original-title='Bloquear usuario'></i>
-                                        <?php }else{?>
-                                        <i class="fa fa-unlock icono-acciones tip status_usuario pointer" data-accion='' data-id='<?=$g['usuario_id']?>' data-original-title='Desbloquear usuario'></i>
-                                        <?php }?>
-                                        &nbsp;
-                                        <i class="fa fa-unlock-alt icono-acciones cambiar-pass pointer tip" data-id="<?=$g['usuario_id']?>" data-original-title="Cambiar contraseña"></i>&nbsp;
-                                        <?php if($g['usuario_status_eliminado']==''){?>
-                                        <i class="fa fa-trash-o icono-acciones eliminar_medico tip pointer" data-accion='hidden' data-original-title="Eliminar médico" data-id="<?=$g['medico_id']?>"></i>
-                                        <?php }else{?>
-                                        <i class="fa fa-check icono-acciones eliminar_medico tip pointer" data-accion='' data-original-title="Reactivar cuenta de usuario" data-id="<?=$g['medico_id']?>"></i>
-                                        <?php }?>
-                                        
-                                        
+                                    <td class="v-align-middle"><?=$g['usuario_nombre']?> </td>
+                                    <td class="v-align-middle"><?=$g['usuario_apellidos']?></td>
+                                    <td class="v-align-middle"><?=$g['usuario_rfc']?></td>
+                                    <td class="v-align-middle"><?=$g['usuario_registro']?></td>
+                                    <td class="v-align-middle"><?=$g['usuario_rol']?></td>
+                                    <td class="text-center">
+
+                                        <a href="<?=  base_url()?>admin/usuarios/add?a=edit&u=<?=$g['usuario_id']?>" >
+                                            <i class="fa fa-pencil tip icono-acciones" data-original-title="Editar"></i>
+                                        </a>&nbsp;
+                                        <i class="fa fa-trash-o eliminar-admin pointer tip icono-acciones " data-original-title="Eliminar" data-usuario="<?=$g['usuario_id']?>" data-admin="<?=$g['admin_id']?>"></i>
                                     </td>
                                 </tr>
                                 <?php endforeach;?>
@@ -86,4 +64,4 @@
     </div>
 </div>
 <?=  Modules::run('config/get_footer_admin')?>
-<script src="<?=  base_url()?>assets_dash/js/medicos.js" ></script>
+<script src="<?=  base_url()?>assets_dash/js/administrador.js" ></script>

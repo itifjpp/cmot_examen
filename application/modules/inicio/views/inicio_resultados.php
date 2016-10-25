@@ -1,6 +1,3 @@
-<?php if("https://".$_SERVER['HTTP_HOST']=='https://www.cmot.com.mx'){?>
-<script>location.replace('https://cmot.org.mx/');</script>
- <?php }?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -35,9 +32,6 @@
     <!--html5imageupload--->
     <link href="<?=  base_url()?>assets_dash/plugins/html5imageupload/html5imageupload.css" rel="stylesheet" type="text/css"/>
     <link href="<?=  base_url()?>assets_dash/plugins/html5imageupload/demo.html5imageupload.css" rel="stylesheet" type="text/css"/>
- 
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
- 
     <link href="<?=  base_url()?>assets/css/examen.css" rel="stylesheet">
 </head>
 <body class="hero-content-dark footer-dark layout-boxed" style="background: white">
@@ -69,10 +63,10 @@
                     </ul>
                     <ul class="header-nav nav nav-pills collapse pull-right" >
                         <li style="float: right!important" class="">
-                            <a href="#" style="font-size: 13px!important"><?=$info[0]['medico_nombre']?> <?=$info[0]['medico_apellidos']?><i class="fa fa-chevron-down"></i></a>
+                            <a href="#" style="font-size: 13px!important"><?=$info[0]['usuario_nombre']?> <?=$info[0]['usuario_apellidos']?><i class="fa fa-chevron-down"></i></a>
 
                             <ul class="sub-menu" >
-                                <li><a href="<?=  base_url()?>inicio/examen?u=<?=$_GET['u']?>&r=<?=$_GET['r']?>" style="font-size: 12px!important;line-height: 1.5">Inicio</a></li>
+                                <li><a href="<?=  base_url()?>inicio/examen" style="font-size: 12px!important;line-height: 1.5">Inicio</a></li>
                                 <li><a href="<?=  base_url()?>config/CerrarSesion" style="font-size: 12px!important;line-height: 1.5">Cerrar Sesión</a></li>
                             </ul>
                         </li>

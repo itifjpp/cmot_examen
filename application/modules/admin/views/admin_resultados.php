@@ -17,7 +17,7 @@
             <li><a href="#" class="active">Resultados de Evaluación</a> </li>
         </ul>
         <div class="row-fluid">
-            <div class="col-md-8 col-centered" >
+            <div class="col-md-10 col-centered" >
                 <div class="span12">
                     <div class="grid simple ">
                         <div class="grid-title">
@@ -27,15 +27,17 @@
                             <table class="table table-hover table-condensed" id="example">
                                 <thead>
                                     <tr>
-                                        <th style="width:auto">N° Usuario</th>
+                                        <th style="width:auto">Usuario</th>
                                         <th style="width:auto">RFC</th>
+                                        <th style="width:auto">Registro</th>
                                         <th style="width: auto;" class="text-center">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($Gestion as $g):?>
                                     <tr id="<?=$g['usuario_id']?>">
-                                        <td class="v-align-middle"><?=$g['usuario_id']?> </td>
+                                        <td><span class="muted"><?=$g['usuario_nombre']?> <?=$g['usuario_apellidos']?></span></td>
+                                        <td><span class="muted"><?=$g['usuario_rfc']?></span></td>
                                         <td><span class="muted"><?=$g['usuario_rfc']?></span></td>
                                         <td class="text-center">
                                             

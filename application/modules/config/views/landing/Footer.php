@@ -62,16 +62,9 @@
     <script src="<?=  base_url()?>assets/js/jquery.js" type="text/javascript" ></script>
  
     <script src="<?=  base_url()?>assets/js/jquery.ezmark.js" type="text/javascript"></script>
-    <script src='https://www.google.com/jsapi' type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.10/backbone-min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
-    <!-- POWERTOUR CORE -->
-    <script src="<?=  base_url()?>assets/libraries/powertour_v3.1.0/js/powertour/powertour.3.1.0.min.js" type="text/javascript"></script> 
-    <!--Maps-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb3I2FAzlE4y3qeYMmLUzuwJtrSnjHzpA&amp;v=3.exp" type="text/javascript" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.min.js" type="text/javascript" ></script>
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="<?=  base_url()?>assets/libraries/underscore-min.js" type="text/javascript"></script>
+    <script src="<?=  base_url()?>assets/libraries/backbone-min.js" type="text/javascript"></script>
+    <script src="<?=  base_url()?>assets/libraries/bootstrap.min.js" ></script>
     <script src="<?=  base_url()?>assets_dash/plugins/html5imageupload/html5imageupload.js" type="text/javascript" type="text/javascript"></script>
     <script src="<?=  base_url()?>assets/libraries/bootstrap-sass/javascripts/bootstrap/collapse.js" type="text/javascript"></script>
     <script src="<?=  base_url()?>assets/libraries/bootstrap-sass/javascripts/bootstrap/dropdown.js" type="text/javascript"></script>
@@ -104,42 +97,9 @@
     <script src="<?=  base_url()?>assets_dash/plugins/footable/footable.all.min.js" type="text/javascript"></script>
     <script src="<?=  base_url()?>assets/js/bootbox.min.js" type="text/javascript"></script> 
     <script src="<?=  base_url()?>assets/js/bootbox.min.js" type="text/javascript"></script> 
-    <script src="<?=  base_url()?>assets/showbizpro/js/jquery.themepunch.showbizpro.js" type="text/javascript" ></script>
-    <script src="<?=  base_url()?>assets/showbizpro/js/jquery.themepunch.plugins.min.js" type="text/javascript" ></script>
     <script src="<?=  base_url()?>assets/js/inicio_acciones.js" type="text/javascript" ></script>
     <script src="<?=  base_url()?>assets_dash/js/datatables_1.js" type="text/javascript"></script>
     <script src="<?=  base_url()?>assets/js/profession.js" type="text/javascript" ></script>
     <script src="<?=  base_url()?>assets/js/mensajes.js" type="text/javascript" ></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-80988033-1', 'auto');
-      ga('send', 'pageview');
-
-    </script>
-    <script>
-    $(window).scroll(function (event) {
-        var scroll = $(window).scrollTop();
-//        if(!scroll){
-//            $('.menu-static').removeClass('menu-static-fixed')
-//            $('.container-slider').removeClass('top-slider-scroll');
-//            $('.logo-menu-static').addClass('hide')
-//        }else{
-//            $('.menu-static').addClass('menu-static-fixed')
-//            $('.container-slider').addClass('top-slider-scroll');
-//            $('.logo-menu-static').removeClass('hide')
-//        }
-    });
-    $(document).ready(function (){
-        $('.tp-banner-full-width,.panel-slider').removeClass('hide');
-
-       if(rol_id==0){
-           $('body .segundo-menu-fixed').hide();
-       }
-    });
-    </script>
 </body>
 </html>

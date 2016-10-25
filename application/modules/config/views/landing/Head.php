@@ -1,6 +1,3 @@
-<?php if("https://".$_SERVER['HTTP_HOST']=='https://www.cmot.com.mx'){?>
-<script>location.replace('https://cmot.org.mx/');</script>
- <?php }?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -35,24 +32,6 @@
     <!--html5imageupload--->
     <link href="<?=  base_url()?>assets_dash/plugins/html5imageupload/html5imageupload.css" rel="stylesheet" type="text/css"/>
     <link href="<?=  base_url()?>assets_dash/plugins/html5imageupload/demo.html5imageupload.css" rel="stylesheet" type="text/css"/>
-    
-    <!--showbizpro-->
-    <link href="<?=  base_url()?>assets/libraries/carousel/css/owl.theme.css" rel="stylesheet" type="text/css" media="screen"/>
-    <link href="<?=  base_url()?>assets/libraries/carousel/css/owl.carousel.css" rel="stylesheet" type="text/css" media="screen"/>
-    <link href="<?=  base_url()?>assets/showbizpro/css/settings.css" rel="stylesheet" type="text/css" media="screen"/>
-    <!--Bootstrap Toggle-->
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <!--Layered Popups-->
-    <link href="<?=  base_url()?>popups/css/style.css?ver=3.53" rel="stylesheet"> 
-    <link href="<?=  base_url()?>popups/css/animate.min.css?ver=3.53" rel="stylesheet"> 
-    <link href="<?=  base_url()?>popups/css/perfect-scrollbar-0.4.6.min.css?ver=3.53" rel="stylesheet">
-    <!-- POWERTOUR -->
-    
-    <link rel="stylesheet" href="<?=  base_url()?>assets/libraries/powertour_v3.1.0/css/powertour/powertour.3.1.0.css"/> 
-    <link rel="stylesheet" href="<?=  base_url()?>assets/libraries/powertour_v3.1.0/css/powertour/powertour-style-clean.css"/><!-- Styling CSS file -->
-    <link rel="stylesheet" href="<?=  base_url()?>assets/libraries/powertour_v3.1.0/css/powertour/powertour-connectors.css"/> <!-- Extra styling elements CSS file -->
-    <link rel="stylesheet" href="<?=  base_url()?>assets/libraries/powertour_v3.1.0/css/powertour/animate.min.css"/>          <!-- Animation core CSS file -->
-    <link rel="stylesheet" href="<?=  base_url()?>assets/libraries/powertour_v3.1.0/css/powertour/powertour-mobile.css"/>     <!-- Mobile support help/example/demo -->
 </head>
 <body class="hero-content-dark footer-dark layout-boxed" style="background: white">
     <section class="page-loading " style="position: absolute;top: calc(50%);bottom: 0px;left: 0px;right: 0px">

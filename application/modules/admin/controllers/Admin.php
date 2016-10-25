@@ -132,12 +132,14 @@ class Admin extends Config{
         $this->setOutput(array('accion'=>'1'));
     }
     public function resultados() {
-        $sql['Gestion']=  $this->config_mdl->_query('SELECT  *  FROM resultado_evaluacion GROUP BY usuario_rfc');
+        $sql['Gestion']=  $this->config_mdl->_query('SELECT * FROM usuarios, resultado_evaluacion WHERE 
+            usuarios.usuario_id=resultado_evaluacion.usuario_id GROUP BY resultado_evaluacion.usuario_id');
         $this->load->view('admin_resultados',$sql);
     }
     public function resultados_usuario() {
-        $json_string = file_get_contents("https://cmot.org.mx/api/miperfil?user=".  $this->input->get('u'));
-        $sql['info']=  json_decode($json_string,true);
+        $sql['info']=  $this->config_mdl->_get_data_condition('usuarios',array(
+            'usuario_id'=>  $this->input->get('u')
+        ));
         $sql['Gestion']=  $this->admin_mdl->_resultados($this->input->get('u'));
         $sql['total_preg']=  $this->config_mdl->_get_data('preguntas');
         $this->load->view('admin_resultados_usuario',$sql);

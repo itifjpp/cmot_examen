@@ -24,11 +24,11 @@ $(document).ready(function(e){
             })
         }
     })
-    $('.registrar-administrador').on('submit',function(e){
+    $('.registrar-usuario').on('submit',function(e){
         e.preventDefault()
         if($('input[name=usuario_pass]').val()==$('input[name=usuario_pass_c]').val()){
             $.ajax({
-                url: base_url+"admin/insert_administrador",
+                url: base_url+"admin/usuarios/insert_user",
                 type: 'POST',
                 dataType: 'json',
                 data:$(this).serialize(),
@@ -51,20 +51,19 @@ $(document).ready(function(e){
         $('input[type=password]').removeAttr('required')
     }
     $('.eliminar-admin').on('click',function(e){
-        var admin=$(this).attr('data-admin');
         var usuario=$(this).attr('data-usuario');
         if(confirm('¿DESEA ELIMINAR EL REGISTRO?')){
             $.ajax({
-                url: base_url+"admin/eliminar_administrador",
+                url: base_url+"admin/usuarios/eliminar_user",
                 type: 'POST',
                 dataType: 'json',
-                data: {'admin_id':admin,'usuario_id':usuario},
+                data: {'usuario_id':usuario},
                 beforeSend: function (xhr) {
                     msj_success_noti('Eliminando registro...')
                 },success: function (data, textStatus, jqXHR) {
                     if(data.accion=='1'){
                         msj_success_noti('Registro eliminado');
-                        $('#'+admin).remove();
+                        $('#'+usuario).remove();
                     }
                 },error:function(){
                     msj_error_serve();

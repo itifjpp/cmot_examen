@@ -29,17 +29,18 @@ class Inicio extends Config{
         $this->load->view('inicio_index');
     }
     public function casosclinicos() {
-        $json_string = file_get_contents("https://cmot.org.mx/api/miperfil?user=".  base64_decode($this->input->get('u')));
-        $sql['info']=  json_decode($json_string,true);
+        $sql['info']= $this->config_mdl->_get_data_condition('usuarios',array(
+            'usuario_id'=>$_SESSION['CMOT_USER']
+        ));
         $sql_=  $this->config_mdl->_get_data_condition('casosclinicos_usuarios',array(
-            'usuario_id'=>  base64_decode($this->input->get('u'))
+            'usuario_id'=>  $_SESSION['CMOT_USER']
         ));
         if(empty($sql_)){
             foreach ($this->config_mdl->_get_data('casosclinicos') as $value) {
                 $this->config_mdl->_insert('casosclinicos_usuarios',array(
                     'casoclinico_id'=>$value['casoclinico_id'],
                     'casoclinico_status'=>'Pendiente',
-                    'usuario_id'=>  base64_decode($this->input->get('u')) 
+                    'usuario_id'=>  $_SESSION['CMOT_USER']
                 ));
             }
         }
@@ -47,14 +48,15 @@ class Inicio extends Config{
         $this->load->view('inicio_examen',$sql);
     }
     public function examen() {
-        $json_string = file_get_contents("https://cmot.org.mx/api/miperfil?user=".  base64_decode($this->input->get('u')));
-        $sql['info']=  json_decode($json_string,true);
+        $sql['info']= $this->config_mdl->_get_data_condition('usuarios',array(
+            'usuario_id'=>$_SESSION['CMOT_USER']
+        ));
         $sql['examen']=  $this->get_examen();
         $sql['casosclinicos']=  $this->config_mdl->_get_data('casosclinicos');
         $sql['check_user']=  $this->config_mdl->_get_data_condition('resultado_evaluacion',array(
-            'usuario_id'=>  base64_decode($this->input->get('u'))
+            'usuario_id'=>  $_SESSION['CMOT_USER']
         ));
-        $sql['resultados']=  $this->admin_mdl->_resultados(base64_decode($this->input->get('u')));
+        $sql['resultados']=  $this->admin_mdl->_resultados($_SESSION['CMOT_USER']);
         $this->load->view('inicio_examen',$sql);
     }
     
@@ -116,12 +118,10 @@ class Inicio extends Config{
 //        $this->setOutput(array('accion'=>'1'));
 //    } 
     public function ver_resultados() {
-        $json_string = file_get_contents("https://cmot.org.mx/api/miperfil?user=".  base64_decode($this->input->get('u')));
-        $sql['info']=  json_decode($json_string,true);
-        $sql['total_preg']=  $this->config_mdl->_get_data_condition('preguntas',array(
-            'casoclinico_id'=>  $this->input->get('cc')
+        $sql['info']= $this->config_mdl->_get_data_condition('usuarios',array(
+            'usuario_id'=>$_SESSION['CMOT_USER']
         ));
-        $sql['resultados']=  $this->admin_mdl->_resultados(base64_decode($this->input->get('u')));
+        $sql['resultados']=  $this->admin_mdl->_resultados($_SESSION['CMOT_USER']);
         $this->load->view('inicio_resultados',$sql);
     }
     public function inicio_guardar_respuestas() {
@@ -129,7 +129,6 @@ class Inicio extends Config{
         $data=array(
             'resultado_pregunta'=>$respuesta[0],
             'resultado_respuesta'=>$respuesta[1],
-            'usuario_rfc'=>  $this->input->post('usuario_rfc'),
             'usuario_id'=>  $this->input->post('usuario_id'),
             'casoclinico_id'=>  $respuesta[2],
             'resultado_fecha'=>  date('Y/m/d'),

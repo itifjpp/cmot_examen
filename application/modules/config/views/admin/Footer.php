@@ -4,8 +4,8 @@
         <script src="<?=  base_url()?>assets_dash/plugins/jquery-1.8.3.min.js" type="text/javascript"></script> 
         <script src="<?=  base_url()?>assets_dash/plugins/boostrapv3/js/bootstrap.min.js" type="text/javascript"></script> 
         <script src="<?=  base_url()?>assets_dash/plugins/breakpoints.js" type="text/javascript"></script> 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.10/backbone-min.js"></script>
+        <script src="<?=  base_url()?>assets/libraries/underscore-min.js" type="text/javascript"></script>
+        <script src="<?=  base_url()?>assets/libraries/backbone-min.js" type="text/javascript"></script>
         <script src="<?=  base_url()?>assets_dash/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script> 
         <script src="<?=  base_url()?>assets_dash/plugins/jquery-scrollbar/jquery.scrollbar.min.js" type="text/javascript"></script>
         <script src="<?=  base_url()?>assets_dash/plugins/pace/pace.js" type="text/javascript"></script>  

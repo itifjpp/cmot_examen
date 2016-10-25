@@ -1,6 +1,4 @@
-<?php if("https://".$_SERVER['HTTP_HOST']=='https://www.cmot.com.mx'){?>
-<script>location.replace('https://cmot.org.mx/');</script>
- <?php }?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -35,8 +33,6 @@
     <!--html5imageupload--->
     <link href="<?=  base_url()?>assets_dash/plugins/html5imageupload/html5imageupload.css" rel="stylesheet" type="text/css"/>
     <link href="<?=  base_url()?>assets_dash/plugins/html5imageupload/demo.html5imageupload.css" rel="stylesheet" type="text/css"/>
- 
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
  
     <link href="<?=  base_url()?>assets/css/examen.css" rel="stylesheet">
 </head>

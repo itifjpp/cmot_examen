@@ -17,7 +17,7 @@ class Login_mdl extends CI_Model{
         return $this->db
                 ->where('usuario_user',$user)
                 ->where('usuario_pass',  md5($pass))
-                ->get('cmot_usuarios')
+                ->get('usuarios')
                 ->result_array();
     }
     public function _inser_user($data) {

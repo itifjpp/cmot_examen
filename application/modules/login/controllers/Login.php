@@ -22,39 +22,11 @@ class Login extends Config{
     public function acceder() {
         $sql=  $this->login_mdl->_acceder($this->input->post('txtuser'),$this->input->post('txtpass'));
         if(!empty($sql)){
-            if($sql[0]['usuario_status_eliminado']==''){
-                if($sql[0]['usuario_status']!='Bloqueado'){
-                    $data=array(
-                        'usuario_ultimo_acceso'=>  $this->input->post('usuario_ultimo_acceso'),
-                        'usuario_ultimo_acceso_hora'=>  $this->input->post('usuario_ultimo_acceso_hora')
-                    );
-                    $this->config_mdl->_update_data('cmot_usuarios',$data,array(
-                        'rol_id'=>'2',
-                        'usuario_id'=>$sql[0]['usuario_id']
-                    ));
-                    $_SESSION['idUser']=$sql[0]['usuario_id'];
-                    $_SESSION['idRol']=$sql[0]['rol_id'];
-                    if($_SESSION['idRol']=='2'){
-                        $this->config_mdl->_insert_history('N/E','INICIO DE SESIÓN','INICIO DE SESIÓN');
-                    }
-                    
-                    $this->setOutput(array(
-                        'accion'=>'1',
-                        'rol_id'=>$sql[0]['rol_id']
-                    ));
-                }else{
-                    $this->setOutput(array(
-                        'accion'=>'3',
-                        'rol_id'=>''
-                    ));
-                } 
-            }else{
-                $this->setOutput(array(
-                    'accion'=>'4',
-                    'rol_id'=>''
-                ));    
-            }
-
+            $_SESSION['CMOT_USER']=$sql[0]['usuario_id'];
+            $this->setOutput(array(
+                'accion'=>'1',
+                'rol_id'=>$sql[0]['usuario_rol']
+            ));
         }else{
             $this->setOutput(array(
                 'accion'=>'2',
@@ -64,7 +36,7 @@ class Login extends Config{
         }
     }
     public function check_user() {
-        $sql=  $this->config_mdl->_get_data_condition('cmot_usuarios',array(
+        $sql=  $this->config_mdl->_get_data_condition('usuarios',array(
             'usuario_user'=>  $this->input->post('user')
         ));
         if(empty($sql)){

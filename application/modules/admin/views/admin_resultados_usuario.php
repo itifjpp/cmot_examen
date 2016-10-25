@@ -15,7 +15,7 @@
             <li><p>Inicio</p></li>
             <li><a href="#" class="">Exámen</a> </li>
             <li><a href="#" class="back-history1">Resultados de Evaluación</a> </li>
-            <li><a href="#" class="active"><?=$info[0]['medico_nombre']?> <?=$info[0]['medico_apellidos']?></a> </li>
+            <li><a href="#" class="active"><?=$info[0]['usuario_nombre']?> <?=$info[0]['usuario_apellidos']?></a> </li>
         </ul>
         <div class="row-fluid">
             <div class="span12">
@@ -85,9 +85,9 @@
                                 <div class="col-md-5">
                                     <div class="alert alert-success">
                                         <button class="close" data-dismiss="alert"></button>
-                                        <h6><strong> Médico: </strong><?=$info[0]['medico_nombre']?> <?=$info[0]['medico_apellidos']?></h6>
-                                        <h6><strong> RFC:</strong> <?=$info[0]['medico_rfc']?></h6>
-                                        <h6><strong> Email:</strong> <?=$info[0]['medico_email']?></h6><br>
+                                        <h6><strong> Usuario: </strong><?=$info[0]['usuario_nombre']?> <?=$info[0]['usuario_apellidos']?></h6>
+                                        <h6><strong> RFC:</strong> <?=$info[0]['usuario_rfc']?></h6>
+                                        <h6><strong> Registro:</strong> <?=$info[0]['usuario_registro']?></h6><br>
                                     </div>
                                 </div>
                                 <div class="col-md-7">
