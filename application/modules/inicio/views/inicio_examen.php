@@ -161,12 +161,10 @@
 <?=  Modules::run('config/get_footer')?>
 <script>
   $(document).ready(function(e){
-//        window.onbeforeunload = function (e) {
-//               var e = e || window.event;
-//               if (e) {
-//                 e.returnValue = 'SI CIERRE LA EL NAVEGADOR SE PERDERAN TODOS LOS DATOS, ¿DESEA CONTINUAR?';
-//               }
-//        }
+        
+        $(document).bind("contextmenu",function(e){
+            return true;
+        });
         $('body .zoom_img_pregunta').elevateZoom({
             constrainType:"height", 
             constrainSize:274, 
@@ -177,6 +175,7 @@
             galleryActiveClass: "active"});   
   })    
 </script>
+
 <script src="<?=  base_url()?>assets/js/inicio.js"></script>
 <script src="<?=  base_url()?>assets/js/examen.js"></script>
 <script src="<?=  base_url()?>assets/plugins/elevatezoom-master/jquery.elevatezoom.js"></script>

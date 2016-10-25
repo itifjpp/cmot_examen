@@ -83,7 +83,7 @@ $(document).ready(function(){
         
         if(check==0){
             
-            if(confirm('¿ESTA SEGURO QUE DESEA DAR COMO FINALIZADO LA EVALUACIÓN DE ESTE CASO CLÍNICO?')){
+            if(confirm('¿ESTA SEGURO QUE DESEA DAR COMO FINALIZADO LA EVALUACIÓN?')){
                 $('.content-exam').hide();
                 $('.ver-resultados').removeClass('hide');
             }
