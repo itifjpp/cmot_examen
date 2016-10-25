@@ -120,16 +120,16 @@
                         <input type="hidden" value="<?=$i?>" name="total_preguntas">
                     </div>
                     <div class="col-md-8 col-md-offset-2 text-center ver-resultados hide">
-                        <h4>Evaluación de Casos Clínicos Finalizado, Click en el Siguiente Enlace Para Ver Los Resultados</h4>
+                        <h4>Evaluación de casos clínicos finalizado, En menos de 24 hrs el administrador enviará los resultados de la evaluación asu dirección de correo electrónico</h4>
                         <center>
-                            <a href="<?=  base_url()?>inicio/ver_resultados">
+                            <a href="<?=  base_url()?>inicio/ver_resultados" hidden="">
                                 <button class="btn btn-success">Ver Resultados</button>
                             </a>
                         </center>
                     </div>
                     <?php }else{?>
                    <div class="col-sm-8 col-md-offset-2">
-                        <h2 class="text-center">Resultados de Evaluación</h2>
+                        <h4 class="text-center">Evaluación de casos clínicos finalizado, En menos de 24 hrs el administrador enviará los resultados de la evaluación asu dirección de correo electrónico</h4>
                         <?php 
                         $puntos_finales=0;
                         foreach ($resultados as $value) {
@@ -140,7 +140,7 @@
                         ?>
                         <br><br>
                         
-                        <div class="alert alert-success">
+                        <div class="alert alert-success hide">
                             <button class="close" data-dismiss="alert"></button>
                             <h2 class="text-center" style="color: #0090D9">Puntaje Total: <?=$puntos_finales?> Puntos</h2>  
                         </div>
